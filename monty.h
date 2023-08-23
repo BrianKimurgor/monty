@@ -37,6 +37,8 @@ typedef struct bus_s
 	char *arg;
 	FILE *file;
 	int lifi;
+	unsigned int size;
+	unsigned int counter;
 } bus_t;
 extern bus_t bus;
 /**
