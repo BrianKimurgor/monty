@@ -20,22 +20,3 @@ void f_push(stack_t **head, unsigned int number)
 	new_node->next = *head;
 	*head = new_node;
 }
-
-/**
- * f_pall - prints all elements of the stack.
- * @head: stack head
- * @number: unused parameter (ignored)
- * Return: no return
- */
-void f_pall(stack_t **head, unsigned int number __attribute__((unused)))
-{
-	stack_t *current;
-
-	current = *head;
-	while (current != NULL)
-	{
-		printf("%d\n", current->n);
-		current = current->next;
-	}
-}
-
