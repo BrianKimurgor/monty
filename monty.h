@@ -39,6 +39,7 @@ typedef struct bus_s
 	int lifi;
 	unsigned int size;
 	unsigned int counter;
+	stack_t *stack;
 } bus_t;
 extern bus_t bus;
 /**
