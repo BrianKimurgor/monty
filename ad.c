@@ -6,7 +6,7 @@
  * @counter: line_number
  * Return: no return
  */
-void f_add(stack_t **head, unsigned int line_number)
+void f_add(stack_t **head, unsigned int counter)
 {
 	stack_t *h = *head;
 	int len = 0;
@@ -22,7 +22,7 @@ void f_add(stack_t **head, unsigned int line_number)
 
 	if (len < 2)
 	{
-		fprintf(stderr, "Error: Stack is too short to perform addition on line %d.\n",line_number);
+		fprintf(stderr, "Error: Stack too short to add on line %d.\n", counter);
 		exit(1);
 	}
 

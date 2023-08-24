@@ -52,7 +52,7 @@ extern bus_t bus;
  */
 typedef struct instruction_s
 {
-	void (*f)(stack_t **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int counter);
 	char *opcode;
 } instruction_t;
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
@@ -72,7 +72,7 @@ void f_pstr(stack_t **head, unsigned int counter);
 void f_rotl(stack_t **head, unsigned int counter);
 void f_pop(stack_t **head, unsigned int counter);
 void f_swap(stack_t **head, unsigned int counter);
-void f_add(stack_t **stack, unsigned int counter);
+void f_add(stack_t **head, unsigned int counter);
 void f_nop(stack_t **head, unsigned int counter);
 void f_sub(stack_t **head, unsigned int counter);
 void addqueue(stack_t **head, int n);
