@@ -1,5 +1,7 @@
 #include "monty.h"
 
+bus_t bus = {NULL, NULL, NULL, 0, 0, 0, NULL};
+
 /**
  * main - Entry point for the Monty interpreter
  * @argc: Argument count
@@ -27,7 +29,7 @@ int main(int argc, char *argv[])
     }
 
     /* Reading and Interpreting Monty Code */
-    while (read_line(&content, &content_size, file) > 0)
+    while(fgets(content, content_size, file) != NULL)
     {
         execute(content, &bus.stack, counter, file);
         free(content);
