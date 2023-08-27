@@ -8,24 +8,24 @@
  */
 void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
 {
-    stack_t *last, *secondLast;
+	stack_t *last, *secondLast;
 
-    if (*head == NULL || (*head)->next == NULL)
-        return;
+	if (*head == NULL || (*head)->next == NULL)
+		return;
 
-    last = *head;
-    secondLast = NULL;
+	last = *head;
+	secondLast = NULL;
 
-    while (last->next != NULL)
-    {
-        secondLast = last;
-        last = last->next;
-    }
+	while (last->next != NULL)
+	{
+		secondLast = last;
+		last = last->next;
+	}
 
-    secondLast->next = NULL;
-    last->prev = NULL;
-    last->next = *head;
-    (*head)->prev = last;
-    *head = last;
+	secondLast->next = NULL;
+	last->prev = NULL;
+	last->next = *head;
+	(*head)->prev = last;
+	*head = last;
 }
 
