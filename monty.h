@@ -48,7 +48,7 @@ extern bus_t bus;
  * @f: function handling the opcode
  *
  * Description: opcode and its function
- * for stack, queues, LIFO, FIFO ALX project
+ * for stack, queues, LIFO, FIFO Holberton project
  */
 typedef struct instruction_s
 {
