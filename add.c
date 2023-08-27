@@ -1,36 +1,28 @@
 #include "monty.h"
 
 /**
- * f_add - adds the top two elements of the stack.
- * @head: stack head
- * @counter: line_number
- * Return: no return
+ * f_add - Adds the top two elements of the stack.
+ * @stack: Double pointer to the head of the stack
+ * @line_number: Line number in the Monty bytecode file
+ *
+ * Description: This function adds the values of the top two elements of the
+ * stack and replaces the top element with the result.
+ * If there are less than two elements in the stack, an error message is
+ * printed and the program exits with failure status.
  */
-void f_add(stack_t **head, unsigned int line_number)
+void f_add(stack_t **stack, unsigned int line_number)
 {
-	stack_t *h = *head;
-	int len = 0;
-	int aux;
-	stack_t *top;
-	stack_t *next;
+    stack_t *top = *stack;
+    stack_t *second_top = top->next;
 
-	while (h != NULL)
-	{
-		len++;
-		h = h->next;
-	}
+    if (top == NULL || second_top == NULL)
+    {
+        fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+        exit(EXIT_FAILURE);
+    }
 
-	if (len < 2)
-	{
-		fprintf(stderr, "Error: Stack too short to add on line %d.\n", line_number);
-		exit(1);
-	}
-
-	top = *head;
-	next = top->next;
-	aux = top->n + next->n;
-	next->n = aux;
-	*head = next;
-	free(top);
+    top->n += second_top->n;
+    *stack = second_top;
+    free(top);
 }
 
