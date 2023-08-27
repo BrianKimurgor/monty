@@ -8,33 +8,33 @@
  */
 void f_mod(stack_t **head, unsigned int line_number)
 {
-    stack_t *h = *head;
-    unsigned int len = 0;
-    int aux;
+	stack_t *h = *head;
+	unsigned int len = 0;
+	int aux;
 
-    while (h)
-    {
-        len++;
-        h = h->next;
-    }
+	while (h)
+	{
+		len++;
+		h = h->next;
+	}
 
-    if (len < 2)
-    {
-        fprintf(stderr, "L%u: stack too short\n", line_number);
-        free_stack(*head);
-        exit(EXIT_FAILURE);
-    }
+	if (len < 2)
+	{
+		fprintf(stderr, "L%u: stack too short\n", line_number);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
 
-    if (h->n == 0)
-    {
-        fprintf(stderr, "L%u: division by zero\n", line_number);
-        free_stack(*head);
-        exit(EXIT_FAILURE);
-    }
+	if (h->n == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", line_number);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
 
-    aux = (h->prev->n) % (h->n);
-    h->prev->n = aux;
-    free(h);
-    *head = h->prev;
+	aux = (h->prev->n) % (h->n);
+	h->prev->n = aux;
+	free(h);
+	*head = h->prev;
 }
 

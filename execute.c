@@ -33,16 +33,16 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		{"pop", f_pop},
 		/*{"swap", f_swap},*/
 		{"mul", f_mul},
-                {"nop", f_nop},
+		{"nop", f_nop},
 		{"sub", f_sub},
 		{"div", f_div},
 		{"mod", f_mod},
 		{"pchar", f_pchar},
 		{"pstr", f_pstr},
 		{"rotl", f_rotl},
-                {"add", f_add},
+		{"add", f_add},
 		{"rotr", f_rotr},
-	/*	{"queue", f_queue},*/
+		/*{"queue", f_queue},*/
 		{"stack", f_stack},
 		{NULL, NULL}
 	};

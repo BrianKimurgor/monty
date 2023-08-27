@@ -8,29 +8,29 @@
  */
 void f_mul(stack_t **head, unsigned int counter)
 {
-    stack_t *h;
-    int len = 0, aux;
+	stack_t *h;
+	int len = 0, aux;
 
-    h = *head;
-    while (h)
-    {
-        len++;
-        h = h->next;
-    }
+	h = *head;
+	while (h)
+	{
+		len++;
+		h = h->next;
+	}
 
-    if (len < 2)
-    {
-        fprintf(stderr, "L%u: stack too short\n", counter);
-        fclose(bus.file);
-        free(bus.content);
-        free_stack(*head);
-        exit(EXIT_FAILURE);
-    }
+	if (len < 2)
+	{
+		fprintf(stderr, "L%u: stack too short\n", counter);
+		fclose(bus.file);
+		free(bus.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
 
-    h = *head;
-    aux = h->next->n * h->n;
-    h->n = aux;
-    *head = h->next;
-    free(h);
+	h = *head;
+	aux = h->next->n * h->n;
+	h->n = aux;
+	*head = h->next;
+	free(h);
 }
 
